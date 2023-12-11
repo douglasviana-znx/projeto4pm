@@ -46,10 +46,31 @@ public class Usuario {
     }
 
     public void emprestarItem(ItemBiblioteca item) {
-        // Lógica para emprestar um item ao usuário
-        if (item.disponivelEmprestimo()) {
-            itensEmprestados.add((ItemBiblioteca) item);
+        try {
+            validarEmprestimo(item);
+            itensEmprestados.add(item);
             item.realizarEmprestimo();
+            System.out.println("Item emprestado para: " + nome);
+        } catch (EmprestimoException e) {
+            System.out.println("Erro ao tentar fazer o empréstimo: " + e.getMessage());
+        }
+    }
+
+    private void validarEmprestimo(ItemBiblioteca item) throws EmprestimoException {
+        if (itensEmprestados.contains(item)) {
+            throw new EmprestimoException("Você já possui esse item emprestado.");
+        }
+
+        if (item.getQntExemplares() == 0) {
+            throw new EmprestimoException("Não há exemplares disponíveis para empréstimo.");
+        }
+
+        if (itensEmprestados.size() >= 3) {
+            throw new EmprestimoException("Você já possui 3 itens em sua posse.");
+        }
+
+        if (item.estaAtrasado()) {
+            throw new EmprestimoException("Você possui algum livro em atraso.");
         }
     }
 

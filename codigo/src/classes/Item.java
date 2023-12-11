@@ -70,8 +70,27 @@ public class Item implements ItemBiblioteca {
 
 	@Override
 	public int getQuantidadeDisponivel() {
-		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public boolean estaAtrasado() {
+		return false;
+	}
+
+	@Override
+	public int getDiasPrazo() {
+				return 0;
+	}
+
+	@Override
+	public boolean disponivelEmprestimo() {
+		return false;
+	}
+
+	@Override
+	public boolean isEmprestavel() {
+		return false;
 	}
 
 	@Override
@@ -84,30 +103,6 @@ public class Item implements ItemBiblioteca {
 	public void realizarDevolucao() {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public boolean estaAtrasado() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int getDiasPrazo() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean disponivelEmprestimo() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEmprestavel() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	
 }

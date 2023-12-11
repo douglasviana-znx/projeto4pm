@@ -10,13 +10,21 @@ public class Main {
     	Biblioteca biblioteca = new Biblioteca();
     	Item item1 = new Item(1, "Livro", "Autor 1", 2000, 3, true, 10);
         Item item2 = new Item(2, "Revista", "Autor 2", 2005, 2, false, 0);
+        Item item3 = new Item(3, "Tese", "Autor 3", 1999, 3, false, 0);
+        Item item4 = new Item(4, "CD", "Autor 2", 2005, 4, true, 10);
         Usuario usuario1 = new Usuario(1, "Usuário 1");
         Usuario usuario2 = new Usuario(2, "Usuário 2");
+        Usuario usuario3 = new Usuario(3, "Usuário 3");
+        Usuario usuario4 = new Usuario(4, "Usuário 4");
 
         biblioteca.cadastrarItem(item1);
         biblioteca.cadastrarItem(item2);
+        biblioteca.cadastrarItem(item3);
+        biblioteca.cadastrarItem(item4);
         biblioteca.cadastrarUsuario(usuario1);
         biblioteca.cadastrarUsuario(usuario2);
+        biblioteca.cadastrarUsuario(usuario3);
+        biblioteca.cadastrarUsuario(usuario4);
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
